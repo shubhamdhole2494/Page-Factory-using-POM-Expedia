@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="96167" started-at="2018-05-25T06:34:40Z" finished-at="2018-05-25T06:36:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="96167" started-at="2018-05-25T06:34:40Z" finished-at="2018-05-25T06:36:16Z">
+      <class name="Demo.openExpedia">
+        <test-method status="PASS" signature="guestLogin()[pri:0, instance:Demo.openExpedia@396a51ab]" name="guestLogin" duration-ms="96030" started-at="2018-05-25T12:04:40Z" finished-at="2018-05-25T12:06:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestLogin -->
+      </class> <!-- Demo.openExpedia -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
