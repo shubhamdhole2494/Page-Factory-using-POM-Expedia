@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import excelReader.Excel_Reader;
+
 public class testBase {
 	
 	public WebDriver driver;
 	public static final Logger log = Logger.getLogger(testBase.class.getName());
 	String baseurl = "https://www.expedia.co.in";
-	String browsers = "chrome";
+	String browsers = "firefox";
 	
 	public void init() {
 		selectBrowser(browsers);
@@ -42,6 +44,14 @@ public class testBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
+	}
+	
+	//com.expedia.POM/src/main/java/data/TestData.xlsx
+	public String[][] getData(String excelName, String sheetName){
+		String path = System.getProperty("user.dir") + "/src/main/java/data/TestData.xlsx" +excelName ;
+		Excel_Reader excel = new Excel_Reader(path);
+		String [][] data = excel.getDataFromSheet(sheetName, excelName);
+		return data;
 	}
 
 }

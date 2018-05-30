@@ -25,6 +25,7 @@ public class singInPageObject {
 	WebElement signLink;
 	
 	public singInPageObject(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
