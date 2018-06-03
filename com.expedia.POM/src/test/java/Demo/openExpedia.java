@@ -5,8 +5,10 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import loginPage.singInPageObject;
@@ -23,8 +25,11 @@ public class openExpedia extends testBase {
 	@BeforeTest
 	public void guestLogin() {
 		
-		
+		if(!testBase.isExecutable("openExpedia")) {
+			throw new SkipException("Skipping the test as the Runmode is No");
+		}
 		init();
+		
 		//driver = new FirefoxDriver();
 		//System.setProperty("webdriver.chrome.driver","D:\\Shubham\\Software\\Selenium_Jars\\chromedriver\\chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
@@ -35,11 +40,11 @@ public class openExpedia extends testBase {
 		
 	}
 	
-	@Test
-	public void invalidLogin() throws InterruptedException {
+	@Test(dataProvider="getData")
+	public void invalidLogin(String username, String password) throws InterruptedException {
 		
 		signIn = new singInPageObject(driver);
-		signIn.loginToApplication("test@gmail.com", "123456");
+		signIn.loginToApplication(username,password);
 		
 	}
 	@AfterClass
@@ -48,7 +53,11 @@ public class openExpedia extends testBase {
 	}
 	
 	
-	
+	@DataProvider
+	public Object[][] getData(){
+		
+		return testBase.getData("openExpedia");
+	}
 	
 
 }

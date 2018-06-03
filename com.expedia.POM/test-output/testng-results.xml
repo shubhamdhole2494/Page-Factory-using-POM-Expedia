@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="111482" started-at="2018-05-28T06:26:00Z" finished-at="2018-05-28T06:27:51Z">
+  <suite started-at="2018-06-03T19:14:56Z" name="Default suite" finished-at="2018-06-03T19:16:11Z" duration-ms="75522">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="111482" started-at="2018-05-28T06:26:00Z" finished-at="2018-05-28T06:27:51Z">
+    <test started-at="2018-06-03T19:14:56Z" name="Default test" finished-at="2018-06-03T19:16:11Z" duration-ms="75522">
       <class name="Demo.openExpedia">
-        <test-method status="PASS" signature="guestLogin()[pri:0, instance:Demo.openExpedia@77caeb3e]" name="guestLogin" is-config="true" duration-ms="81812" started-at="2018-05-28T11:56:00Z" finished-at="2018-05-28T11:57:22Z">
+        <test-method is-config="true" signature="guestLogin()[pri:0, instance:Demo.openExpedia@19e4fcac]" started-at="2018-06-04T00:44:56Z" name="guestLogin" finished-at="2018-06-04T00:45:55Z" duration-ms="59556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="invalidLogin()[pri:0, instance:Demo.openExpedia@77caeb3e]" name="invalidLogin" duration-ms="28967" started-at="2018-05-28T11:57:22Z" finished-at="2018-05-28T11:57:51Z">
+        <test-method signature="invalidLogin(java.lang.String, java.lang.String)[pri:0, instance:Demo.openExpedia@19e4fcac]" started-at="2018-06-04T00:45:55Z" name="invalidLogin" data-provider="getData" finished-at="2018-06-04T00:46:11Z" duration-ms="15908" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456.0]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:Demo.openExpedia@77caeb3e]" name="endTest" is-config="true" duration-ms="636" started-at="2018-05-28T11:57:51Z" finished-at="2018-05-28T11:57:51Z">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:Demo.openExpedia@19e4fcac]" started-at="2018-06-04T00:46:11Z" name="endTest" finished-at="2018-06-04T00:46:11Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
