@@ -1,5 +1,9 @@
 package testBase;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FilterInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -9,19 +13,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import excelReader.ExcelReader;
-import excelReader.Excel_Reader;
 
-public class testBase {
+
+//import excelReader.ExcelReader;
+
+
+public class testBase  {
 
 	public WebDriver driver;
+	//Access the properties File
+	public static Properties config = new Properties();
+	public static FileInputStream fis;
+	
 	public static final Logger log = Logger.getLogger(testBase.class.getName());
 	String baseurl = "https://www.expedia.co.in";
 	String browsers = "chrome";
-	public static ExcelReader excel = new ExcelReader(
-			System.getProperty("user.dir") + "/src/main/java/data/TestData.xlsx");
+	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/main/java/data/TestData.xlsx");
 
-	public void init() {
-
+	public void init() throws Exception {
+		//loadPropertiesFile();
 		selectBrowser(browsers);
 		getURL(baseurl);
 		String log4jConfig = "log4j.properties";
@@ -51,10 +61,19 @@ public class testBase {
 	}
 
 	// com.expedia.POM/src/main/java/data/TestData.xlsx
-	public String[][] getData(String excelName, String sheetName) {
-		String path = System.getProperty("user.dir") + "/src/main/java/data/TestData.xlsx" + excelName;
-		Excel_Reader excel = new Excel_Reader(path);
-		String[][] data = excel.getDataFromSheet(sheetName, excelName);
+	public static Object[][] getData (String sheetName) {
+		//String path = System.getProperty("user.dir") + "/src/main/java/data/TestData.xlsx" + excelName;
+		//Excel_Reader excel = new Excel_Reader(path);
+		//String[][] data = excel.getDataFromSheet(sheetName, excelName);
+		//return data;
+		int rows = excel.getRowCount(sheetName);
+		int cols = excel.getColumnCount(sheetName);
+		Object data[][] = new Object[rows-1][cols];
+		for(int rowNum = 2;rowNum<=rows;rowNum++) {
+			for(int colNum = 0; colNum<cols;colNum++) {
+				data[rowNum-2][colNum] = excel.getCellData(sheetName, colNum, rowNum);
+			}
+		}
 		return data;
 	}
 
@@ -75,22 +94,16 @@ public class testBase {
 
 	}
 
-	public static Object[][] getData(String sheetName) {
 
-		int rows = excel.getRowCount(sheetName); // Get Row Count
-		int cols = excel.getColumnCount(sheetName); // Get Col Count
-		Object data[][] = new Object[rows - 1][cols]; // -1
-
-		for (int rowNum = 2; rowNum <= rows; rowNum++) { // 2
-
-			for (int colNum = 0; colNum < cols; colNum++) {
-
-				data[rowNum - 2][colNum] = excel.getCellData(sheetName, colNum, rowNum); // -2
-			}
-		}
-
-		return data;
-
+	
+	public void loadPropertiesFile() throws Exception {
+		
+		//D:\Shubham\Software\eclipse\git\Page-Factory-using-POM-Expedia\com.expedia.POM\src\main\java\config
+		
+			fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\config\\Config.properties");
+			config.load(fis);
+		
+//		
 	}
 
 }

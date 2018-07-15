@@ -31,20 +31,30 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">75.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">54.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">Demo.openExpedia</td><td><a href="#m1"><b>invalidLogin</b>  </a></td><td class="numi">1</td><td>1528053355743</td><td class="numi">15908</td></tr>
+<tr><th colspan="4">Default test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">uiAction.HotelsTabActions</td><td><a href="#m1"><b>test</b>  </a></td><td class="numi">1</td><td>1531596775065</td><td class="numi">54757</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">Demo.openExpedia:invalidLogin</h2>
+<h2 id="m1">uiAction.HotelsTabActions:test</h2>
 <table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>test@gmail.com</td>
-<td>123456.0</td>
+<tr class="param"><th>Parameter #1</th></tr>
+<tr class="param stripe"><td>2.0</td>
 </tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Cannot locate option with value: 2.0
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
+System info: host: &apos;DESKTOP-TSISR14&apos;, ip: &apos;192.168.0.7&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;9.0.1&apos;
+Driver info: driver.version: unknown</p>
+org.openqa.selenium.support.ui.Select.selectByValue(Select.java:209)
+<br/>at loginPage.hotelsPageObject.selectDropdownRooms(hotelsPageObject.java:60)
+<br/>at uiAction.HotelsTabActions.test(HotelsTabActions.java:19)
+<br/>25 lines not shown
+</td></tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Demo.openExpedia">
+      <class name="uiAction.HotelsTabActions">
         <methods>
-          <include name="invalidLogin"/>
-          <include name="guestLogin"/>
+          <include name="test" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Demo.openExpedia -->
+      </class> <!-- uiAction.HotelsTabActions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

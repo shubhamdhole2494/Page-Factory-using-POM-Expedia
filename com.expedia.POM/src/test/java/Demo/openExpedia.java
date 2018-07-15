@@ -23,7 +23,7 @@ public class openExpedia extends testBase {
 	singInPageObject signIn;
 	//public static String baseurl = "https://www.expedia.co.in";
 	@BeforeTest
-	public void guestLogin() {
+	public void guestLogin() throws Exception {
 		
 		if(!testBase.isExecutable("openExpedia")) {
 			throw new SkipException("Skipping the test as the Runmode is No");

@@ -1,10 +1,11 @@
 package testBase;
 
+import excelReader.ExcelReader;
 
-public class testRunmode extends testBase {
+public class testRunmode {
 	
 	//public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir")+"/src/main/java/data/TestData.xlsx");
-
+	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir")+"/src/main/java/data/TestData.xlsx");
 	public static boolean isExecutable() {
 	
 		for(int rownum=2;rownum<=excel.getRowCount("testSuite"); rownum++) {

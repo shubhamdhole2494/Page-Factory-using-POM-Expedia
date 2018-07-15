@@ -59,6 +59,7 @@ public class ExcelReader {
 	
 	
 	// returns the data from a cell
+	@SuppressWarnings("deprecation")
 	public String getCellData(String sheetName,String colName,int rowNum){
 		try{
 			if(rowNum <=0)
@@ -128,6 +129,7 @@ public class ExcelReader {
 	
 	
 	// returns the data from a cell
+	@SuppressWarnings("deprecation")
 	public String getCellData(String sheetName,int colNum,int rowNum){
 		try{
 			if(rowNum <=0)
