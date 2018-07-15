@@ -1,4 +1,4 @@
-package loginPage;
+package objectPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

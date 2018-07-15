@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import loginPage.singInPageObject;
+import objectPage.singInPageObject;
 import testBase.testBase;
 
 

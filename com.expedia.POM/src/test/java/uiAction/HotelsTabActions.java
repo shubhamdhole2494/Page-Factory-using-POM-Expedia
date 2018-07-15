@@ -3,7 +3,7 @@ package uiAction;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import loginPage.hotelsPageObject;
+import objectPage.hotelsPageObject;
 import testBase.testBase;
 
 public class HotelsTabActions extends testBase {
